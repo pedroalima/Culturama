@@ -48,19 +48,15 @@
     row-gap: 1rem;
 }
 
-.agenda__item {
-    display: grid;
-    flex-grow: 1;
+/* Rodapé */
+.rodape {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-.agenda__item img:nth-child(1) {
-    grid-column: 1/3;
-    grid-row: 1/2
-}
-
-.agenda__atracao {
-    grid-column: 2/3;
-    grid-row: 2/3;
+.rodape__logo {
+    align-self: end;
 }
 
 @media (min-width: 720px) {
@@ -120,4 +116,33 @@
         display: flex;
         flex-direction: column;
     }
+
+    .categorias {
+        display: grid;
+        grid-template-areas:
+        "titulo1 titulo1"
+        "bloco titulo2"
+        "bloco imagem";
+        column-gap: 1.5rem;
+        row-gap: 1rem;
+        grid-template-columns: calc(50% - 0.75rem);
+        grid-template-rows: auto 1fr auto;
+    }
+
+    .categorias__titulo {
+        grid-area: titulo1;
+    }
+
+    .categorias__destaques {
+        grid-area: titulo2;
+    }
+
+    .categorias__lista {
+        grid-area: bloco;
+    }
+
+    .categorias__imagem {
+        grid-area: imagem;
+    }
+
 }
